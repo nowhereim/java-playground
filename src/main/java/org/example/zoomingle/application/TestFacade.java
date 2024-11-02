@@ -20,4 +20,8 @@ public class TestFacade {
     public List<TestModel> test2(String args) {
         return testService.test2(args);
     }
+
+    public TestModel createTest(TestModel testModel) {
+        return testService.createTest(testModel);
+    }
 }

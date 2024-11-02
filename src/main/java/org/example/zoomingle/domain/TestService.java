@@ -23,4 +23,8 @@ public class TestService {
     public List<TestModel> test2(String args) {
         return testDB.test2(args);
     }
+
+    public TestModel createTest(TestModel testModel) {
+        return testDB.createTest(testModel);
+    }
 }

@@ -41,4 +41,19 @@ public class TestDBImpl implements TestRepository {
         ).toList();
 
     }
+
+    @Override
+    public TestModel createTest(TestModel testModel) {
+        TestEntity testEntity = new TestEntity(
+                testModel.getId(),
+                testModel.getName(),
+                testModel.getEmail()
+        );
+        TestEntity saved = testJpaRepository.save(testEntity);
+        return new TestModel(
+                saved.getId(),
+                saved.getName(),
+                saved.getEmail()
+        );
+    }
 }
