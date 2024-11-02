@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.example.zoomingle.infrastructure.TestDBImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 //@RequiredArgsConstructor // 이거 없이 하려면 직접 생성자를 만들어야 함
 public class TestService {
@@ -16,5 +18,9 @@ public class TestService {
 
     public String test(String args) {
         return testDB.test(args);
+    }
+
+    public List<TestModel> test2(String args) {
+        return testDB.test2(args);
     }
 }

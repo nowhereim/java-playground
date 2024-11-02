@@ -3,9 +3,12 @@ package org.example.zoomingle.interfaces;
 
 import lombok.RequiredArgsConstructor;
 import org.example.zoomingle.application.TestFacade;
+import org.example.zoomingle.domain.TestModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
@@ -19,5 +22,12 @@ public class TestController {
             @RequestParam("sexy") String dto
     ){
         return testFacade.test(dto);
+    }
+
+    @GetMapping("concerts2")
+    public List<TestModel> getTests2(
+            @RequestParam("sexy") String dto
+    ){
+        return testFacade.test2(dto);
     }
 }
