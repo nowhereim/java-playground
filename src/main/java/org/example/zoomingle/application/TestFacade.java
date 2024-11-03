@@ -1,6 +1,7 @@
 package org.example.zoomingle.application;
 
 import lombok.RequiredArgsConstructor;
+import org.example.zoomingle.domain.JwtTestService;
 import org.example.zoomingle.domain.TestModel;
 import org.example.zoomingle.domain.TestService;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.util.List;
 public class TestFacade {
 
     private final TestService testService;
+    private final JwtTestService jwtTestService;
 
     public String test(String args) {
         return testService.test(args);
@@ -23,5 +25,9 @@ public class TestFacade {
 
     public TestModel createTest(TestModel testModel) {
         return testService.createTest(testModel);
+    }
+
+    public String createToken(String email) {
+        return jwtTestService.generateAccessToken();
     }
 }
