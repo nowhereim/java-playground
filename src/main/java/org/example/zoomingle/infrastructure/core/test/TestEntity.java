@@ -1,4 +1,4 @@
-package org.example.zoomingle.infrastructure;
+package org.example.zoomingle.infrastructure.core.test;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

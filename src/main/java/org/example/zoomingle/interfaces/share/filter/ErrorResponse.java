@@ -1,4 +1,4 @@
-package org.example.zoomingle.interfaces;
+package org.example.zoomingle.interfaces.share.filter;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

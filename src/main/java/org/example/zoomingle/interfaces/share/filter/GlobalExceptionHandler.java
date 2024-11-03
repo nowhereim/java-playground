@@ -1,4 +1,4 @@
-package org.example.zoomingle.interfaces;
+package org.example.zoomingle.interfaces.share.filter;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

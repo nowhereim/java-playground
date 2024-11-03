@@ -1,4 +1,4 @@
-package org.example.zoomingle.interfaces;
+package org.example.zoomingle.interfaces.test;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
