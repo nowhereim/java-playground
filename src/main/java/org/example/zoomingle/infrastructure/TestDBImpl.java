@@ -21,7 +21,6 @@ public class TestDBImpl implements TestRepository {
                 testEntity.getName(),
                 testEntity.getEmail()
         );
-        System.out.println("converted = " + converted);
         return " 어서오세요. 당신의 이메일은 = "
                 + converted.getEmail()
                 + " 너의 이름은 = "

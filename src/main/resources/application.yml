@@ -11,9 +11,14 @@ spring:
       enabled: true
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         show_sql: true
         format_sql: true
+springdoc:
+  swagger-ui:
+    path: /api/docs  # ?? swagger-ui.html ?? /api/docs? ?? ??
+  api-docs:
+    path: /api/openapi  # ?? /v3/api-docs ?? RESTful? ??? ??
