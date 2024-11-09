@@ -12,3 +12,5 @@ public class ZoomingleApplication {
         SpringApplication.run(ZoomingleApplication.class, args);
     }
 }
+
+//ㅋㅋ

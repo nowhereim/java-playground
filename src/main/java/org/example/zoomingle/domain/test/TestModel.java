@@ -1,4 +1,4 @@
-package org.example.zoomingle.domain;
+package org.example.zoomingle.domain.test;
 
 
 import lombok.*;

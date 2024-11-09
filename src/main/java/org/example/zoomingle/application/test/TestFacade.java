@@ -1,9 +1,9 @@
-package org.example.zoomingle.application;
+package org.example.zoomingle.application.test;
 
 import lombok.RequiredArgsConstructor;
-import org.example.zoomingle.domain.JwtTestService;
-import org.example.zoomingle.domain.TestModel;
-import org.example.zoomingle.domain.TestService;
+import org.example.zoomingle.domain.test.JwtTestService;
+import org.example.zoomingle.domain.test.TestModel;
+import org.example.zoomingle.domain.test.TestService;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

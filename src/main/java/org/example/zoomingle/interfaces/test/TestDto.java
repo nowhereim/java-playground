@@ -2,7 +2,7 @@ package org.example.zoomingle.interfaces.test;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
-import org.example.zoomingle.domain.TestModel;
+import org.example.zoomingle.domain.test.TestModel;
 
 @Builder
 @Getter // Getter 추가

@@ -6,8 +6,8 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.example.zoomingle.application.TestFacade;
-import org.example.zoomingle.domain.TestModel;
+import org.example.zoomingle.application.test.TestFacade;
+import org.example.zoomingle.domain.test.TestModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

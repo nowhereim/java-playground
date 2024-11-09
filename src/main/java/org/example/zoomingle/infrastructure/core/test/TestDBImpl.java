@@ -2,8 +2,8 @@ package org.example.zoomingle.infrastructure.core.test;
 
 
 import lombok.RequiredArgsConstructor;
-import org.example.zoomingle.domain.TestModel;
-import org.example.zoomingle.domain.TestRepository;
+import org.example.zoomingle.domain.test.TestModel;
+import org.example.zoomingle.domain.test.TestRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
