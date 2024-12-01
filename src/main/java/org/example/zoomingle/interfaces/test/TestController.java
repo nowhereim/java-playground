@@ -49,10 +49,10 @@ public class TestController {
 
     @PostMapping("public/token")
     @Operation(summary = "토큰 생성", description = "토큰을 생성하는 API")
-    public String createToken(
+    public ResponseDto createToken(
             @RequestParam("email") String email
     ){
-        return testFacade.createToken(email);
+        return ResponseDto.toResponseDto(testFacade.createToken(email));
     }
 
 

@@ -2,7 +2,7 @@ package org.example.zoomingle.application.user;
 
 import lombok.RequiredArgsConstructor;
 import org.example.zoomingle.domain.user.User;
-import org.example.zoomingle.domain.user.UserService;
+import org.example.zoomingle.domain.user.service.UserService;
 import org.springframework.stereotype.Component;
 
 @Component

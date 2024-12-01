@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:17.2  # PostgreSQL 17.2 버전 사용
+    container_name: postgres-db
+    ports:
+      - "5432:5432"  # 로컬 포트 5432와 컨테이너 포트를 연결
+    environment:
+      POSTGRES_USER: root       # 유저네임 설정
+      POSTGRES_PASSWORD: rootpassword  # 비밀번호 설정
+      POSTGRES_DB: playground   # 기본 데이터베이스 이름
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 데이터 영구 저장
+    restart: always
+
+volumes:
+  postgres_data:  # 데이터가 유지되도록 볼륨 설정

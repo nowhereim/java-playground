@@ -2,23 +2,20 @@ spring:
   application:
     name: zoomingle
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/playground
-    username: root
-    password: rootpassword
-  h2:
-    console:
-      enabled: true
+    driver-class-name: org.postgresql.Driver # PostgreSQL 드라이버
+    url: jdbc:postgresql://localhost:5432/playground # PostgreSQL 연결 URL
+    username: root # PostgreSQL 사용자 이름
+    password: rootpassword # PostgreSQL 비밀번호
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect # PostgreSQL 방언
         show_sql: true
         format_sql: true
 springdoc:
   swagger-ui:
-    path: /api/docs  # ?? swagger-ui.html ?? /api/docs? ?? ??
+    path: /api/docs
   api-docs:
-    path: /api/openapi  # ?? /v3/api-docs ?? RESTful? ??? ??
+    path: /api/openapi

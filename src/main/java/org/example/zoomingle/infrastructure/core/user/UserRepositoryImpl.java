@@ -2,7 +2,7 @@ package org.example.zoomingle.infrastructure.core.user;
 
 import lombok.RequiredArgsConstructor;
 import org.example.zoomingle.domain.user.User;
-import org.example.zoomingle.domain.user.UserRepository;
+import org.example.zoomingle.domain.user.repositories.UserRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -22,8 +22,6 @@ public class UserRepositoryImpl implements UserRepository {
                 .id(user.getId())
                 .username(user.getUsername())
                 .password(user.getPassword())
-                .description(user.getDescription())
-                .profile(user.getProfile())
                 .build()
         );
 
@@ -31,8 +29,6 @@ public class UserRepositoryImpl implements UserRepository {
                 .id(save.getId())
                 .username(save.getUsername())
                 .password(save.getPassword())
-                .description(save.getDescription())
-                .profile(save.getProfile())
                 .build();
 
 

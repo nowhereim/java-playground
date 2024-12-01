@@ -1,4 +1,6 @@
-package org.example.zoomingle.domain.user;
+package org.example.zoomingle.domain.user.repositories;
+
+import org.example.zoomingle.domain.user.User;
 
 public interface UserRepository {
     User findById(Long id);

@@ -27,8 +27,6 @@ public class UserRegisterRequestDto {
                 .builder()
                 .username(userRegisterRequestDto.getUsername())
                 .password(userRegisterRequestDto.getPassword())
-                .description(userRegisterRequestDto.getDescription())
-                .profile(userRegisterRequestDto.getProfile())
                 .build();
     }
 }

@@ -1,7 +1,9 @@
-package org.example.zoomingle.domain.user;
+package org.example.zoomingle.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.example.zoomingle.domain.user.User;
+import org.example.zoomingle.domain.user.repositories.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,8 +25,6 @@ public class UserService {
                         .id(args.getId())
                         .username(args.getUsername())
                         .password(passwordEncoder.encode(args.getPassword()))
-                        .description(args.getDescription())
-                        .profile(args.getProfile())
                         .authorities(List.of(new SimpleGrantedAuthority("ROLE_USER")))
                         .build()
         );

@@ -1,37 +1,38 @@
 package org.example.zoomingle.domain.user;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 @Builder
-public class User implements UserDetails {
+@AllArgsConstructor
+public class Jwt implements UserDetails {
 
     private Long id;
+
     private String username;
+
     private String password;
-    private String phone;
-    private List<GrantedAuthority> authorities;
+
+    private List<GrantedAuthority> roles;
+
+    private ZonedDateTime createdAt;
+
+    private ZonedDateTime updatedAt;
+
+    private ZonedDateTime deletedAt;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
+        return roles;
     }
 
     @Override

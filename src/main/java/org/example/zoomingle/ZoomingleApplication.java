@@ -10,7 +10,9 @@ public class ZoomingleApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ZoomingleApplication.class, args);
+        System.out.println("주밍글 빨리 만들어야한다고!!! = " + args);
     }
 }
 
-//ㅋㅋ
+//소셜로그인, 핸드폰번호 로그인
+//        둘 다 본인 확인 필수 ( 본인인증 )
