@@ -1,4 +1,4 @@
 package org.example.zoomingle.interfaces.adoption;
 
-public class AgencyAdoptionController {
+public class ShopAdoptionController {
 }

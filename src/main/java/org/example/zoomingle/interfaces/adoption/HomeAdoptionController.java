@@ -1,14 +1,25 @@
 package org.example.zoomingle.interfaces.adoption;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
+import org.example.zoomingle.interfaces.adoption.dto.HomeAdpotionRegisterRequestDTO;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/adoption/home")
 public class HomeAdoptionController {
 
 
     @Operation(summary = "가정분양 등록" , description = "가정분양을 등록하는 API")
-    public void registerAdoption(){
+    @PostMapping("/register")
+    @SecurityRequirement(name = "Bearer")  // Bearer 토큰을 요구함
+    public @Valid HomeAdpotionRegisterRequestDTO registerAdoption(
+            @RequestBody @Valid HomeAdpotionRegisterRequestDTO requestDto
+            ){
+
+        return requestDto;
 
     }
 

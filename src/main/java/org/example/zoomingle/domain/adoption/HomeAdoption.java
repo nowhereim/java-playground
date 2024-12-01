@@ -1,7 +1,10 @@
 package org.example.zoomingle.domain.adoption;
 
+import lombok.Data;
+
 import java.time.LocalDate;
 
+@Data
 public class HomeAdoption {
     private long id;
     private long userId;
@@ -28,25 +31,3 @@ public class HomeAdoption {
     private String homeEnvironmentImageURL;
 }
 
-enum Weight  {
-    EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE
-}
-
-enum VaccinationStatus{
-    NOT_VACCINATED,
-    FIRST_VACCINATION,
-    SECOND_VACCINATION,
-    THIRD_VACCINATION,
-    FOURTH_VACCINATION,
-    FIFTH_VACCINATION
-}
-
-enum Gender{
-    Male,
-    Female
-}
-
-enum NeuteringStatus {
-    NEUTERED,
-    NOT_NEUTERED
-}
