@@ -1,4 +1,4 @@
-package org.example.zoomingle.domain.adoption;
+package org.example.zoomingle.domain.adoption.model;
 
 public enum NeuteringStatus {
     NEUTERED,

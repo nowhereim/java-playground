@@ -1,8 +1,12 @@
-package org.example.zoomingle.domain.adoption;
+package org.example.zoomingle.domain.adoption.model;
 
+import lombok.Builder;
+
+@Builder
 public class Image {
     private long id;
     private long adoptionId;
+    private boolean isMain;
     private String url;
     private AdoptionType adoptionType;
     private ImageType type;

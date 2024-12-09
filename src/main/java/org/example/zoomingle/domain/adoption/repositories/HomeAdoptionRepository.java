@@ -1,27 +1,27 @@
 package org.example.zoomingle.domain.adoption.repositories;
 
-import org.example.zoomingle.domain.adoption.HomeAdoption;
+import org.example.zoomingle.domain.adoption.model.HomeAdoption;
 
 import java.util.List;
 
 public interface HomeAdoptionRepository {
-    public void registerHomeAdoption(
+     HomeAdoption registerHomeAdoption(
             HomeAdoption homeAdoption
     );
 
-    public void modifyHomeAdoption(
+    void modifyHomeAdoption(
             HomeAdoption homeAdoption
     );
 
-    public void deleteHomeAdoption(
+     void deleteHomeAdoption(
             HomeAdoption homeAdoption
     );
 
-    public HomeAdoption findByIdHomeAdoption(
+     HomeAdoption findByIdHomeAdoption(
             Long id
     );
 
-    public List<HomeAdoption> findAllHomeAdoption();
+     List<HomeAdoption> findAllHomeAdoption();
 
 
 }

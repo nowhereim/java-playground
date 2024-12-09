@@ -5,13 +5,11 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.Getter;
-import org.example.zoomingle.domain.adoption.Gender;
-import org.example.zoomingle.domain.adoption.NeuteringStatus;
-import org.example.zoomingle.domain.adoption.VaccinationStatus;
-import org.example.zoomingle.domain.adoption.Weight;
+import org.example.zoomingle.domain.adoption.model.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Builder
 @Getter
@@ -67,4 +65,42 @@ public class HomeAdpotionRegisterRequestDTO {
     @Schema(description = "가정 환경 이미지 목록", example = "[{\"url\":\"http://example.com\",\"isMain\":true},{\"url\":\"http://example.com\",\"isMain\":false}]")
     @Valid
     private List<ImageDTO> homeEnvironmentImages;
+
+    public static HomeAdoption toDomain(HomeAdpotionRegisterRequestDTO dto) {
+        return HomeAdoption.builder()
+                .userId(dto.getUserId())
+                .breedId(dto.getBreedId())
+                .birth(dto.getBirth())
+                .weight(dto.getWeight())
+                .vaccinationStatus(dto.getVaccinationStatus())
+                .gender(dto.getGender())
+                .neuteringStatus(dto.getNeuteringStatus())
+                .address(dto.getAddress())
+                .adoptionCondition(dto.getAdoptionCondition())
+                .additionalInfo(dto.getAdditionalInfo())
+                .responsibilityFee(dto.getResponsibilityFee())
+                .responsibilityFeeStoragePeriod(dto.getResponsibilityFeeStoragePeriod())
+                .adoptionAnimalImageURL(
+                        dto.getAdoptionAnimalImages()
+                                .stream()
+                                .map(imageDTO ->
+                                        Image.builder()
+                                                .url(imageDTO.getUrl())
+                                                .isMain(imageDTO.getIsMain())
+                                                .build()) // Image 객체로 변환
+                                .collect(Collectors.toList()) // List<Image>로 수집
+                )
+                .homeEnvironmentImageURL(
+                        dto.getHomeEnvironmentImages()
+                                .stream()
+                                .map(imageDTO ->
+                                        Image.builder()
+                                                .url(imageDTO.getUrl())
+                                                .isMain(imageDTO.getIsMain())
+                                                .build()) // Image 객체로 변환
+                                .collect(Collectors.toList()) // List<Image>로 수집
+                )
+                .build();
+
+}
 }

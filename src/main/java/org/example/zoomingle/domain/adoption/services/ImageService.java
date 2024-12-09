@@ -1,7 +1,7 @@
 package org.example.zoomingle.domain.adoption.services;
 
-import org.example.zoomingle.domain.adoption.HomeAdoption;
-import org.example.zoomingle.domain.adoption.Image;
+import org.example.zoomingle.domain.adoption.model.HomeAdoption;
+import org.example.zoomingle.domain.adoption.model.Image;
 import org.springframework.stereotype.Service;
 
 @Service
