@@ -33,6 +33,6 @@ public class AdoptionFacade {
     }
 
     public List<HomeAdoption> findAllHomeAdoption() {
-       return homeAdoptionService.findAllHomeAdoption();
+        return homeAdoptionService.findAllHomeAdoption();
     }
 }

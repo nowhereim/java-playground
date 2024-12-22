@@ -13,6 +13,7 @@ import java.util.List;
 @Slf4j
 public class HomeAdoptionService {
     private final HomeAdoptionRepository homeAdoptionRepository;
+
     public HomeAdoption registerHomeAdoption(HomeAdoption homeAdoption) {
 
 
@@ -21,9 +22,7 @@ public class HomeAdoptionService {
     }
 
     public void modifyHomeAdoption(HomeAdoption args) {
-        log.error("값이 왜 이따위로 넘어오지? : " + args);
         HomeAdoption homeAdoption = homeAdoptionRepository.findByIdHomeAdoption(args.getId());
-        log.error("이거뭔데? : " + homeAdoption);
         if (homeAdoption == null) {
             throw new IllegalArgumentException("해당 입양 정보가 없습니다.");
         }
@@ -41,7 +40,6 @@ public class HomeAdoptionService {
     }
 
     public List<HomeAdoption> findAllHomeAdoption() {
-
 
         return homeAdoptionRepository.findAllHomeAdoption();
     }

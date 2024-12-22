@@ -11,6 +11,7 @@ public class ZoomingleApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZoomingleApplication.class, args);
     }
+
 }
 
 //소셜로그인, 핸드폰번호 로그인
