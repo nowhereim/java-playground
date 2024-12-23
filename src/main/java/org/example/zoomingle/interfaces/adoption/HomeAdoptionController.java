@@ -3,6 +3,7 @@ package org.example.zoomingle.interfaces.adoption;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.zoomingle.application.adoption.AdoptionFacade;
@@ -10,10 +11,10 @@ import org.example.zoomingle.interfaces.adoption.dto.HomeAdoptionModifyRequestDT
 import org.example.zoomingle.interfaces.adoption.dto.HomeAdoptionResponseDTO;
 import org.example.zoomingle.interfaces.adoption.dto.HomeAdpotionRegisterRequestDTO;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController("/adoption/home")
+@Tag(name = "가정분양 API", description = "가정분양 API 입니다.")
 @RequiredArgsConstructor
 public class HomeAdoptionController {
 
@@ -76,5 +77,7 @@ public class HomeAdoptionController {
     public void deleteAdoption(){
 
     }
+
+
 
 }

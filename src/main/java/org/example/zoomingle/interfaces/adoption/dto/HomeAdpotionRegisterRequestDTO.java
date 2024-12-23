@@ -57,12 +57,12 @@ public class HomeAdpotionRegisterRequestDTO {
     private int responsibilityFeeStoragePeriod;
 
     @Size(min = 1,max = 5, message = "분양 동물 이미지는 최소 1개 이상이어야 합니다.")
-    @Schema(description = "분양 동물 이미지 목록", example = "[{\"url\":\"http://example.com\",\"isMain\":true},{\"url\":\"http://example.com\",\"isMain\":false}]")
+    @Schema(description = "분양 동물 이미지 목록", example = "[{\"image\":\"http://example.com\",\"isMain\":true},{\"image\":\"http://example.com\",\"isMain\":false}]")
     @Valid
     private List<ImageDTO> adoptionAnimalImages;
 
     @Size(min = 1, max = 5, message = "가정 환경 이미지는 최대 5개까지 가능합니다.")
-    @Schema(description = "가정 환경 이미지 목록", example = "[{\"url\":\"http://example.com\",\"isMain\":true},{\"url\":\"http://example.com\",\"isMain\":false}]")
+    @Schema(description = "가정 환경 이미지 목록", example = "[{\"image\":\"http://example.com\",\"isMain\":true},{\"image\":\"http://example.com\",\"isMain\":false}]")
     @Valid
     private List<ImageDTO> homeEnvironmentImages;
 
@@ -80,22 +80,22 @@ public class HomeAdpotionRegisterRequestDTO {
                 .additionalInfo(dto.getAdditionalInfo())
                 .responsibilityFee(dto.getResponsibilityFee())
                 .responsibilityFeeStoragePeriod(dto.getResponsibilityFeeStoragePeriod())
-                .adoptionAnimalImageURL(
+                .adoptionAnimalImages(
                         dto.getAdoptionAnimalImages()
                                 .stream()
                                 .map(imageDTO ->
                                         Image.builder()
-                                                .url(imageDTO.getUrl())
+                                                .url(imageDTO.getImage())
                                                 .isMain(imageDTO.getIsMain())
                                                 .build()) // Image 객체로 변환
                                 .collect(Collectors.toList()) // List<Image>로 수집
                 )
-                .homeEnvironmentImageURL(
+                .homeEnvironmentImages(
                         dto.getHomeEnvironmentImages()
                                 .stream()
                                 .map(imageDTO ->
                                         Image.builder()
-                                                .url(imageDTO.getUrl())
+                                                .url(imageDTO.getImage())
                                                 .isMain(imageDTO.getIsMain())
                                                 .build()) // Image 객체로 변환
                                 .collect(Collectors.toList()) // List<Image>로 수집

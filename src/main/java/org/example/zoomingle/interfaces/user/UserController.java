@@ -18,9 +18,14 @@ public class UserController {
     public User register(
             @RequestBody @Valid UserRegisterRequestDto userRegisterRequestDto
             ){
-        return userFacade.register(userRegisterRequestDto.toDomain(
+        return userFacade.register(UserRegisterRequestDto.toDomain(
                 userRegisterRequestDto
         ));
+    }
+
+    @PostMapping("/public/token")
+    public String createToken(){
+        return userFacade.createToken();
     }
 
 }

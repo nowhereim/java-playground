@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.zoomingle.domain.adoption.model.HomeAdoption;
 import org.example.zoomingle.domain.adoption.repositories.HomeAdoptionRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -43,4 +42,6 @@ public class HomeAdoptionService {
 
         return homeAdoptionRepository.findAllHomeAdoption();
     }
+
+
 }

@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.zoomingle.domain.test.JwtTestService;
+import org.example.zoomingle.domain.user.service.JwtService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,7 +22,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-    private final JwtTestService jwtTestService;
+    private final JwtService jwtService;
 
     @Override
     protected void doFilterInternal(
@@ -35,10 +35,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         // 유효한 Authorization 헤더가 존재하고 SecurityContext에 인증 정보가 없는 경우
         if (authorization != null && authorization.startsWith(BEARER_PREFIX) && securityContext.getAuthentication() == null) {
             String accessToken = authorization.substring(BEARER_PREFIX.length()).trim();
-            String subject = jwtTestService.getSubjectFromToken(accessToken);
+            String subject = jwtService.getSubjectFromToken(accessToken);
 
             // 사용자의 권한 정보 조회 (예시로 USER 권한 부여)
-            List<GrantedAuthority> authorities = jwtTestService.getAuthoritiesFromToken(accessToken);
+            List<GrantedAuthority> authorities = jwtService.getAuthoritiesFromToken(accessToken);
 
             // 인증 객체 생성
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(subject, null, authorities);
