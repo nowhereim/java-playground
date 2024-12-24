@@ -21,7 +21,7 @@ public class ImageController {
 
     @Operation(summary = "이미지 임시 등록" , description = "이미지를 임시로 등록하는 API")
     @PostMapping(value = "/image",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @SecurityRequirement(name = "Bearer")  // Bearer 토큰을 요구함
+    @SecurityRequirement(name = "Bearer")
     public String registerImage(
             @RequestPart("file") MultipartFile file
     )throws IOException {

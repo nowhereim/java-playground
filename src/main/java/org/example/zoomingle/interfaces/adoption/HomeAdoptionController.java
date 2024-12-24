@@ -79,9 +79,7 @@ public class HomeAdoptionController {
     public void deleteAdoption(
             @Parameter(description = "가정분양 ID", required = true) Long id
     ){
-        adoptionFacade.deleteHomeAdoption(
-                adoptionFacade.deleteHomeAdoption(id);
-        );
+        adoptionFacade.deleteHomeAdoption(id);
 
     }
 
