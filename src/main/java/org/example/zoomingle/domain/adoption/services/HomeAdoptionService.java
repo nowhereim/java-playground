@@ -28,7 +28,8 @@ public class HomeAdoptionService {
         homeAdoptionRepository.modifyHomeAdoption(args);
     }
 
-    public void deleteHomeAdoption(HomeAdoption homeAdoption) {
+    public void deleteHomeAdoption(Long id) {
+        HomeAdoption homeAdoption = homeAdoptionRepository.findByIdHomeAdoption(id);
         homeAdoptionRepository.deleteHomeAdoption(homeAdoption);
     }
 

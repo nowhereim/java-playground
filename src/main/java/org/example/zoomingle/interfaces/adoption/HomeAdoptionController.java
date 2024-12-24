@@ -74,10 +74,16 @@ public class HomeAdoptionController {
     }
 
     @Operation(summary = "가정분양 삭제" , description = "가정분양을 삭제하는 API")
-    public void deleteAdoption(){
+    @DeleteMapping("/delete")
+    @SecurityRequirement(name = "Bearer")  // Bearer 토큰을 요구함
+    public void deleteAdoption(
+            @Parameter(description = "가정분양 ID", required = true) Long id
+    ){
+        adoptionFacade.deleteHomeAdoption(
+                adoptionFacade.deleteHomeAdoption(id);
+        );
 
     }
-
 
 
 }
